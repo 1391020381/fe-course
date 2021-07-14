@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .menu {
   display: flex;
   align-items: center;
