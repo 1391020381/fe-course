@@ -35,12 +35,31 @@ export default {
   methods: {
     decimaTo64() {
       if (this.decimal) {
-        this.decimaTo64Value = this.string10to64(this.decimal);
+        if (this.decimal % 1 != 0) {
+          //浮点数
+          let leftDecimal = this.decimal.split(".")[0];
+          let rightDecimal = this.decimal.split(".")[1];
+          this.decimaTo64Value =
+            this.string10to64(leftDecimal) +
+            "." +
+            this.string10to64(rightDecimal);
+        } else {
+          this.decimaTo64Value = this.string10to64(this.decimal);
+        }
       }
     },
     base64ToDecimal() {
       if (this.base64) {
-        this.base64ToDecimalValue = this.string64to10(this.base64);
+        if (this.base64.indexOf(".") != -1) {
+          let leftBase64 = this.base64.split(".")[0];
+          let rightBase64 = this.base64.split(".")[1];
+          this.base64ToDecimalValue =
+            this.string64to10(leftBase64) +
+            "." +
+            this.string64to10(rightBase64);
+        } else {
+          this.base64ToDecimalValue = this.string64to10(this.base64);
+        }
       }
     },
     string10to64(number) {
@@ -49,11 +68,11 @@ export default {
           ""
         );
 
-      let radix = chars.length;
+      let radix = chars.length; // 64
       let qutient = +number;
       let arr = [];
       do {
-        var mod = qutient % radix;
+        var mod = qutient % radix; // 求余
         qutient = (qutient - mod) / radix;
         arr.unshift(chars[mod]);
       } while (qutient);
