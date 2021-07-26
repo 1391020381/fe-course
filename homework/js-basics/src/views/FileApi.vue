@@ -1,6 +1,7 @@
 <template>
   <div class="file-api">
     <button @click="getFile">getFile</button>
+    <div><input type="file" @change="showFile" /></div>
   </div>
 </template>
 
@@ -51,6 +52,13 @@ export default {
           return;
         }
       }
+    },
+    showFile(e) {
+      let files = e.target.files;
+      console.log(files);
+      let file = files[0];
+      console.log(`File name: ${file.name}`); // 例如 my.png
+      console.log(`Last modified: ${file.lastModified}`); // 例如 1552830408824
     },
   },
 };
