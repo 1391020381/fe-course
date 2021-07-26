@@ -13,15 +13,22 @@ const routes = [
   {
     path: "/to64",
     name: "to64",
+    component: () => import(/* webpackChunkName: "to64" */ "../views/to64.vue"),
+  },
+  {
+    path: "/fileApi",
+    name: "fileApi",
     component: () =>
-      import(/* webpackChunkName: "arraysort" */ "../views/to64.vue"),
+      import(/* webpackChunkName: "fileApi" */ "../views/FileApi.vue"),
   },
   {
     path: "/monaco-editor",
     name: "monaco-editor",
     component: () =>
-      import(/* webpackChunkName: "arraysort" */ "../views/monaco-editor.vue"),
-  }
+      import(
+        /* webpackChunkName: "monaco-editor" */ "../views/monaco-editor.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({
