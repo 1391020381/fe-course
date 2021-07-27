@@ -15,7 +15,7 @@ export default {
           {
             description: "Images",
             accept: {
-              "image/*": [".png", ".gif", ".jpeg", ".jpg"],
+              // "image/*": [".png", ".gif", ".jpeg", ".jpg"],
             },
           },
         ],
@@ -57,8 +57,12 @@ export default {
       let files = e.target.files;
       console.log(files);
       let file = files[0];
-      console.log(`File name: ${file.name}`); // 例如 my.png
-      console.log(`Last modified: ${file.lastModified}`); // 例如 1552830408824
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        console.log(e.target.result);
+        return e.target.result;
+      };
+      reader.readAsText(file);
     },
   },
 };
