@@ -2,15 +2,16 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 let commonConfig = {
-    entry: '',
+    entry: './vueComponents/demo.vue',
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, './dist'),
+        clean: true, // 在生成文件之前清空 output 目录
         // library: 'hello',
         //libraryTarget: 'umd'
     },
     mode: 'development',
-    devtool: 'none',
+    // devtool: 'none',
     module: {
         rules: [
             {
@@ -37,6 +38,4 @@ function getWebpackConfig(entry) {
 }
 
 
-module.exports = {
-    getWebpackConfig
-}
+module.exports = commonConfig
