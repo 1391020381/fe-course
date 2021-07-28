@@ -8,6 +8,9 @@
     >
     <a href="/#/fileApi"><div class="item">file-Api使用</div></a>
     <a href="/#/monaco-editor"><div class="item">monaco-editor使用</div></a>
+    <a href="/#/CompilerSingleVueComponent"
+      ><div class="item">CompilerSingleVueComponent-0722作业</div></a
+    >
   </div>
 </template>
 

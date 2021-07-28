@@ -35,6 +35,14 @@ const routes = [
         /* webpackChunkName: "monaco-editor" */ "../views/monaco-editor.vue"
       ),
   },
+  {
+    path: "/CompilerSingleVueComponent",
+    name: "CompilerSingleVueComponent",
+    component: () =>
+      import(
+        /* webpackChunkName: "monaco-editor" */ "../views/CompilerSingleVueComponent.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({
