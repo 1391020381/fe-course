@@ -8,13 +8,14 @@ const logger = require('koa-logger')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
-
+const sequelizeMiddleware = require('./middleware/sequelize')
 // error handler
 onerror(app)
 
 // middlewares
+app.use(sequelizeMiddleware())
 app.use(bodyparser({
-  enableTypes:['json', 'form', 'text']
+  enableTypes: ['json', 'form', 'text']
 }))
 app.use(json())
 app.use(logger())
