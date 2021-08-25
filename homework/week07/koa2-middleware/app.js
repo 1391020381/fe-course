@@ -9,9 +9,9 @@ const logger = require('koa-logger')
 const index = require('./routes/index')
 const users = require('./routes/users')
 const sequelizRouter = require('./routes/sequelize')
+require('./models/mongoose/index')
 // error handler
 onerror(app)
-
 // middlewares
 
 app.use(bodyparser({

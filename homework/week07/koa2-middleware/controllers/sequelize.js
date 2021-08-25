@@ -1,5 +1,5 @@
 const Tutorial = require('../models/sequelize/tutorial')
-const Tutorials = require('../models/sequelize/tutorial')
+
 module.exports = {
     create: async (ctx, next) => {
         try {
