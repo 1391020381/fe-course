@@ -1,20 +1,16 @@
-const { Sequelize } = require('sequelize')
 
+const { Sequelize, Model } = require('sequelize');
+const datbase = 'todos' // 'sequelizeExample'
+const username = 'dataUser'
+const password = '123qwe'
+const sequelize = new Sequelize(datbase, username, password, {
+    host: 'localhost',
+    dialect: 'mysql'
+})
 
-const user = function (seq) {
-    const UserModal = seq.define('user', {
-        id: {
-            type: Sequelize.BIGINT,
-            primaryKey: true,
-        },
-        name: Sequelize.STRING,
-        age: Sequelize.BIGINT,
-        sex: Sequelize.ENUM('male', 'female'),
-    }, {
-        timestamps: false,
-        freezeTableName: true,
-    })
-    return UserModal
+sequelize.sync({
+    force: true
+})
+module.exports = {
+    sequelize
 }
-
-module.exports = user
