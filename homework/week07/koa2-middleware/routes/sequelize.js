@@ -1,6 +1,7 @@
 const router = require('koa-router')()
-const { sequelize } = require('../models/sequelize')
-// router.prefix('/sequelize')
+const { sequelize } = require('../models/sequelize/index')
+const { create, queryAll, deleteSome, updateSome } = require('../controllers/sequelize')
+router.prefix('/sequelize')
 
 router.get('/authenticate', async (ctx, next) => {
     try {
@@ -11,5 +12,8 @@ router.get('/authenticate', async (ctx, next) => {
     }
 })
 
-
+router.get('/create', create)
+router.get('/queryAll', queryAll)
+router.get('/deleteSome', deleteSome)
+router.get('/updateSome', updateSome)
 module.exports = router
