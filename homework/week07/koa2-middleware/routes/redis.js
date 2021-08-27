@@ -15,11 +15,12 @@ router.get('/get', async (ctx, next) => {
     // const value = ctx.query.age
     client.get(key, function (err, value1) {
         console.log(err, value1, '---------------------')
-        // if (err) {
-        //     ctx.boy = err.message
-        // }
+        if (err) {
+            throw err
+        }
         // client.quit();
         ctx.body = value1
     })
+    // ctx.body = ctx.query.age
 })
 module.exports = router
