@@ -1,13 +1,12 @@
-const User = require('../models/mongoose/user')
+const Tutorial = require('../models/sequelize/tutorial')
+
 module.exports = {
     create: async (ctx, next) => {
-        console.log('mongoose:', ctx.query.username, ctx.query.age)
         try {
-            const user = new User({
-                username: ctx.query.username,
-                age: ctx.query.age
+            const result = await Tutorials.create({
+                title: ctx.query.title,
+                desc: ctx.query.desc
             })
-            const result = await user.save()
             ctx.body = result
         } catch (err) {
             ctx.body = err.message
@@ -15,7 +14,7 @@ module.exports = {
     },
     queryAll: async (ctx, next) => {
         try {
-            const result = await User.find({ username: ctx.query.username })
+            const result = await Tutorial.findAll({ title: ctx.query.title })
             ctx.body = result
         } catch (err) {
             ctx.body = err.message
@@ -23,7 +22,9 @@ module.exports = {
     },
     deleteSome: async (ctx, next) => {
         try {
-            const result = await User.remove({ age: ctx.query.age })
+            const result = await Tutorial.destroy({
+                where: { title: ctx.query.title }
+            })
             ctx.body = result
         } catch (err) {
             ctx.body = err.message
@@ -31,7 +32,11 @@ module.exports = {
     },
     updateSome: async (ctx, next) => {
         try {
-            const result = await User.findOneAndUpdate({ age: ctx.query.age }, { age: '2000000000000' })
+            const result = await Tutorial.update({ title: ctx.query.title }, {
+                where: {
+                    desc: ctx.query.desc
+                }
+            })
             ctx.body = result
         } catch (err) {
             ctx.body = err.message

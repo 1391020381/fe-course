@@ -9,7 +9,6 @@ const logger = require('koa-logger')
 const index = require('./routes/index')
 const users = require('./routes/users')
 const sequelizRouter = require('./routes/sequelize')
-const mongooeRouter = require('./routes/mongoose')
 require('./models/mongoose/index')
 // error handler
 onerror(app)
@@ -38,7 +37,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(sequelizRouter.routes(), sequelizRouter.allowedMethods())
-app.use(mongooeRouter.routes(), mongooeRouter.allowedMethods())
+
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)

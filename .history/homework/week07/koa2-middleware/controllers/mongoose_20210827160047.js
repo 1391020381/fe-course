@@ -20,21 +20,5 @@ module.exports = {
         } catch (err) {
             ctx.body = err.message
         }
-    },
-    deleteSome: async (ctx, next) => {
-        try {
-            const result = await User.remove({ age: ctx.query.age })
-            ctx.body = result
-        } catch (err) {
-            ctx.body = err.message
-        }
-    },
-    updateSome: async (ctx, next) => {
-        try {
-            const result = await User.findOneAndUpdate({ age: ctx.query.age }, { age: '2000000000000' })
-            ctx.body = result
-        } catch (err) {
-            ctx.body = err.message
-        }
     }
 }

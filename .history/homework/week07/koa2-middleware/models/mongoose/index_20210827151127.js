@@ -1,5 +1,5 @@
 const mongooe = require('mongoose')
-const db = mongooe.connect('mongodb://master:master!123@localhost:27017/todos')
+const db = mongooe.connect('mongodb://localhost/todos')
 
 const connecttion = mongooe.connection
 connecttion.on('error', () => {
