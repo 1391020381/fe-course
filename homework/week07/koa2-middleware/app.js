@@ -10,7 +10,9 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 const sequelizRouter = require('./routes/sequelize')
 const mongooeRouter = require('./routes/mongoose')
+const redisRouter = require('./routes/redis')
 require('./models/mongoose/index')
+require('./models/redis/index')
 // error handler
 onerror(app)
 // middlewares
@@ -39,6 +41,7 @@ app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(sequelizRouter.routes(), sequelizRouter.allowedMethods())
 app.use(mongooeRouter.routes(), mongooeRouter.allowedMethods())
+app.use(redisRouter.routes(), redisRouter.allowedMethods())
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
