@@ -1,12 +1,11 @@
 const router = require('koa-router')()
-const redis = require('../models/redis/index')
 const { client } = require('../models/redis/index')
 router.prefix('/redis')
 
 router.get('/set', async (ctx, next) => {
     const key = ctx.query.username
     const value = ctx.query.age
-    client.set(key, value, redis.print)
+    client.set(key, value, client.print)
     ctx.body = 'redis-set'
 })
 router.get('/get', async (ctx, next) => {
