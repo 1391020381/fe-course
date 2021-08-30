@@ -1,7 +1,7 @@
 const User = require('../models/mongoose/user')
 module.exports = {
     create: async (ctx, next) => {
-        console.log('mongoose:', ctx.query.username, ctx.query.age)
+        console.log('mongoose:', ctx.query.title, ctx.query.desc)
         try {
             const user = new User({
                 username: ctx.query.username,
