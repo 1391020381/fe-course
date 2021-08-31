@@ -2,13 +2,14 @@ const router = require('koa-router')()
 const { EsClient } = require('../models/elasticsearch/index')
 router.prefix('/elasticsearch')
 
-router.get('/set', async (ctx, next) => {
+router.get('/create', async (ctx, next) => {
     const name = ctx.query.name
     const age = ctx.query.age
     try {
         const result = await EsClient.index({
             index: 'students',
             type: '_doc',
+            id: '1',
             body: {
                 name: name,
                 age: age,
@@ -50,6 +51,7 @@ router.get('/update', async (ctx, next) => {
                 }
             }
         })
+        ctx.body = result
     } catch (err) {
         ctx.body = err.message
     }
