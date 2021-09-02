@@ -43,6 +43,14 @@ const routes = [
         /* webpackChunkName: "monaco-editor" */ "../views/CompilerSingleVueComponent.vue"
       ),
   },
+  {
+    path: "/WebRTC-Local",
+    name: "WebRTC-Local",
+    component: () =>
+      import(
+        /* webpackChunkName: "WebRTC" */ "../views/WebRTC/local.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({
