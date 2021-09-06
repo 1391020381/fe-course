@@ -14,6 +14,9 @@
     <a href="/#/WebRTC-Local">
       <div class="item">WebRTC-Local</div>
     </a>
+    <a href="/#/Decorator">
+      <div class="item">Decorator</div>
+    </a>
   </div>
 </template>
 
