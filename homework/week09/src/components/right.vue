@@ -1,13 +1,7 @@
 <template>
   <div class="app-right">
-    <el-tabs
-      v-model="activeName"
-      @tab-click="handleClick"
-    >
-      <el-tab-pane
-        label="组件配置"
-        name="com"
-      >
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane label="组件配置" name="com">
         <div v-show="componentName">
           <div class="component-name">{{ componentName }}</div>
           <div>
@@ -62,10 +56,7 @@
             </div>
           </div>
           <div class="prop-items">
-            <div
-              v-for="(prop, key) in itemProps"
-              :key="key"
-            >
+            <div v-for="(prop, key) in itemProps" :key="key">
               <span>{{ labelMap[key] || key }}:</span>
               <component
                 :is="prop.component"
@@ -77,10 +68,6 @@
           </div>
         </div>
       </el-tab-pane>
-      <el-tab-pane
-        label="配置管理"
-        name="item"
-      ></el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -110,13 +97,13 @@ export default {
         Boolean: (val = false) => ({
           component: "ElCheckbox",
           propValue: {
-            value: val
-          }
+            value: val,
+          },
         }),
         String: () => ({
           component: "ElInput",
-          propValue: { value: "" }
-        })
+          propValue: { value: "" },
+        }),
       },
       // props的中文对应Map
       labelMap: {
@@ -128,8 +115,8 @@ export default {
         readonly: "只读",
         autosize: "自动大小",
         border: "边框",
-        autocomplete: "自动填充"
-      }
+        autocomplete: "自动填充",
+      },
     };
   },
   methods: {
@@ -146,7 +133,7 @@ export default {
       const defaultProps = item.propValue || {};
       // 从原始组件获取props值，并赋值部分默认值
       const itemProps = { ...elementItem.props };
-      Object.keys(itemProps).forEach(key => {
+      Object.keys(itemProps).forEach((key) => {
         const pItem = itemProps[key];
         const name = pItem.type && pItem.type.name;
         let defaultValue = defaultProps[key]
@@ -180,8 +167,8 @@ export default {
      */
     itemChange(key, value) {
       this.$emit("item-change", key, value);
-    }
-  }
+    },
+  },
 };
 </script>
 
