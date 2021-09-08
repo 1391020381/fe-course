@@ -25,7 +25,9 @@ const routes = [
     path: "/LinkedListInversion",
     name: "LinkedListInversion",
     component: () =>
-      import(/* webpackChunkName: "LinkedListInversion" */ "../views/LinkedListInversion.vue"),
+      import(
+        /* webpackChunkName: "LinkedListInversion" */ "../views/LinkedListInversion.vue"
+      ),
   },
   {
     path: "/monaco-editor",
@@ -47,9 +49,13 @@ const routes = [
     path: "/WebRTC-Local",
     name: "WebRTC-Local",
     component: () =>
-      import(
-        /* webpackChunkName: "WebRTC" */ "../views/WebRTC/local.vue"
-      ),
+      import(/* webpackChunkName: "WebRTC" */ "../views/WebRTC/local.vue"),
+  },
+  {
+    path: "/Decorator",
+    name: "Decorator",
+    component: () =>
+      import(/* webpackChunkName: "Decorator" */ "../views/Decorator.vue"),
   },
 ];
 
