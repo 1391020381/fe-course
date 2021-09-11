@@ -57,6 +57,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "Decorator" */ "../views/Decorator.vue"),
   },
+  {
+    path: "/JSX",
+    name: "JSX",
+    component: () =>
+      import(/* webpackChunkName: "JSX" */ "../views/JSX.vue"),
+  },
 ];
 
 const router = new VueRouter({

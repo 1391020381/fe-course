@@ -17,6 +17,9 @@
     <a href="/#/Decorator">
       <div class="item">Decorator</div>
     </a>
+    <a href="/#/JSX">
+      <div class="item">JSX</div>
+    </a>
   </div>
 </template>
 
