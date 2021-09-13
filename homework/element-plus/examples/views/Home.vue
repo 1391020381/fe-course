@@ -28,6 +28,11 @@ import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "Home",
+  data() {
+    return {
+      a: 1,
+    };
+  },
   components: { Row, Col },
   setup(props, { slots }) {
     // const instance = getCurrentInstance();
@@ -43,7 +48,7 @@ export default defineComponent({
 
     const gotoComponnet = (name: string) => {
       let low = name.replace(/^\w/, (s0) => s0.toLowerCase());
-      // router.push(`/${low}`);
+      router.push(`/${low}`);
       // state.space += 50;
       // console.log(state);
       // space.value += 100;
