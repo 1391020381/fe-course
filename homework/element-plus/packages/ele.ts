@@ -1,6 +1,9 @@
 export { default as Row } from "./Row/Row";
 export { default as Col } from "./Col/Col";
-export { default as Container } from "./Container/Container.vue";
+// import  { Container,Aside,Footer,Header,Main } from "./Container/index";
+// console.log(Container,Aside,Footer,Header,Main);
+// export { Container,Aside,Footer,Header,Main } ;
+export { Container,Aside,Footer,Header,Main } from "./Container/index";
 export { default as Icon } from "./Icon/Icon.vue";
 export { default as Button } from "./Button/Button.vue";
 export { default as Link } from "./Link/Link.vue";

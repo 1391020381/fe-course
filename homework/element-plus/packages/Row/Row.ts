@@ -38,7 +38,6 @@ export default defineComponent({
       }
       return ret;
     });
-
     return () =>
       h(
         props.tag,
