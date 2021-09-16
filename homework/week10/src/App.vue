@@ -1,17 +1,24 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+
+
+<template>
+  <div>
+    <el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949">
+    </el-switch>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import { ElSwitch } from "./components/Switch/index";
+export default defineComponent({
+  name: "App",
+  components: { ElSwitch },
+  setup() {
+    const value = ref(true);
+    return { value };
+  },
+});
 </script>
-
-<template>vue3-component</template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scoped>
 </style>
+

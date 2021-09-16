@@ -1,0 +1,40 @@
+/* Color
+-------------------------- */
+/// color|1|Brand Color|0
+$--color-primary: #409eff !default;
+/// color|1|Border Color|3
+$--border-color-base: #dcdfe6 !default;
+
+/// color|1|Background Color|4
+$--color-white: #ffffff !default;
+
+/* Typography
+-------------------------- */
+
+/// fontSize|1|Font Size|0
+$--font-size-base: 14px !default;
+
+
+
+/// color|1|Font Color|2
+$--color-text-primary: #303133 !default;
+
+
+$--border-radius-circle: 100% !default;
+
+
+/* Switch
+-------------------------- */
+/// color||Color|0
+$--switch-on-color: $--color-primary !default;
+/// color||Color|0
+$--switch-off-color: $--border-color-base !default;
+/// fontSize||Font|1
+$--switch-font-size: $--font-size-base !default;
+$--switch-core-border-radius: 10px !default;
+// height||Other|4 TODO: width 代码写死的40px 所以下面这三个属性都没意义
+$--switch-width: 40px !default;
+// height||Other|4
+$--switch-height: 20px !default;
+// height||Other|4
+$--switch-button-size: 16px !default;
