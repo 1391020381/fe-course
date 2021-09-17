@@ -10,7 +10,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(__dirname, "../packages"), // 设置 `@` 指向 `src` 目录
-      "@/utils": resolve(__dirname, "../utils"), // 设置 `@` 指向 `src` 目录
+      "@utils": resolve(__dirname, "../utils"), // 设置 `@` 指向 `src` 目录
+      "@hooks": resolve(__dirname, "../hooks"), // 设置 `@` 指向 `src` 目录
+      "@directives": resolve(__dirname, "../directives"), // 设置 `@` 指向 `src` 目录
     },
   },
   publicDir: "public",

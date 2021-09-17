@@ -1,11 +1,11 @@
 import { computed, ref, watch, nextTick, onMounted } from 'vue'
 
-import { useLockScreen, useRestoreActive, useModal } from '@element-plus/hooks'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import isServer from '@element-plus/utils/isServer'
-import PopupManager from '@element-plus/utils/popup-manager'
-import { clearTimer, isNumber } from '@element-plus/utils/util'
-import { isValidWidthUnit } from '@element-plus/utils/validators'
+import { useLockScreen, useRestoreActive, useModal } from '@hooks'
+import { UPDATE_MODEL_EVENT } from '@utils/constants'
+import isServer from '@utils/isServer'
+import PopupManager from '@utils/popup-manager'
+import { clearTimer, isNumber } from '@utils/util'
+import { isValidWidthUnit } from '@utils/validators'
 
 import type {
   CSSProperties,
