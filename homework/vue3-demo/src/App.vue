@@ -4,6 +4,8 @@
   <ReactiveSynatx />
   <LifecycleHooks />
   <Watch />
+  <Modularizing />
+  <SharingState></SharingState>
 </template>
 
 <script>
@@ -12,6 +14,8 @@ import Computed from "./components/Computed.vue";
 import ReactiveSynatx from "./components/reactiveSynatx.vue";
 import LifecycleHooks from "./components/LifecycleHooks.vue";
 import Watch from "./components/Watch.vue";
+import Modularizing from "./components/Modularizing//index";
+import SharingState from "./components/SharingState//SharingState.vue";
 export default {
   name: "App",
   components: {
@@ -20,6 +24,8 @@ export default {
     ReactiveSynatx,
     LifecycleHooks,
     Watch,
+    Modularizing,
+    SharingState,
   },
   data() {
     return {
