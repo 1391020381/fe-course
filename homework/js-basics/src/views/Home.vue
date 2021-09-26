@@ -20,6 +20,9 @@
     <a href="/#/JSX">
       <div class="item">JSX</div>
     </a>
+     <a href="/#/Directive">
+      <div class="item">Directive</div>
+    </a>
   </div>
 </template>
 

@@ -63,6 +63,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "JSX" */ "../views/JSX.vue"),
   },
+  {
+    path: "/Directive",
+    name: "Directive",
+    component: () =>
+      import(/* webpackChunkName: "JSX" */ "../views/Directive.vue"),
+  },
 ];
 
 const router = new VueRouter({
