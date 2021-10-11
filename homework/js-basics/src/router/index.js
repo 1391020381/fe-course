@@ -60,8 +60,7 @@ const routes = [
   {
     path: "/JSX",
     name: "JSX",
-    component: () =>
-      import(/* webpackChunkName: "JSX" */ "../views/JSX.vue"),
+    component: () => import(/* webpackChunkName: "JSX" */ "../views/JSX.vue"),
   },
   {
     path: "/Directive",

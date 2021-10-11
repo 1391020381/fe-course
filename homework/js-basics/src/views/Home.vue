@@ -20,7 +20,7 @@
     <a href="/#/JSX">
       <div class="item">JSX</div>
     </a>
-     <a href="/#/Directive">
+    <a href="/#/Directive">
       <div class="item">Directive</div>
     </a>
   </div>
